@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive Offers from Quick Prints and Services - Premium local print and digital services.">
+    <title>Offers - Quick Prints and Services</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables & Theme */
+        :root {
+            --primary: #0056b3; /* Professional Blue */
+            --secondary: #1976D2; /* Mid Blue */
+            --accent: #25D366; /* Green Accent for Savings */
+            --white: #ffffff;
+            --dark: #004494; /* Darker Blue */
+            --text-main: #1a1a1a;
+            --text-light: #4a4a4a;
+            --whatsapp: #25D366;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 8px 32px 0 rgba(0, 86, 179, 0.1);
+            --font-main: 'Outfit', sans-serif;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-main);
+            background: #f8f9fa; /* Matches main site bg-light */
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite alternate;
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 86, 179, 0.15);
+            top: -150px;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(25, 118, 210, 0.15);
+            bottom: -100px;
+            right: -50px;
+            animation-duration: 25s;
+        }
+
+        .shape-3 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.6);
+            top: 40%;
+            left: 40%;
+            animation-duration: 30s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        /* Loading Animation */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--white);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(21, 101, 192, 0.2);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 5%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-sub {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--white);
+            border-radius: 100px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 100px 5% 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(21, 101, 192, 0.1);
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--whatsapp);
+            color: var(--white);
+            border-radius: 100px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-whatsapp::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn-whatsapp:hover::before {
+            left: 100%;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+        }
+
+
+
+        .remote-badge {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: rgba(0, 86, 179, 0.06);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 86, 179, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            max-width: 100%;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .remote-badge i {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Marquee / Highlight Banner */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, #004494 0%, #0066cc 50%, #004494 100%);
+            padding: 14px 0;
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scroll 45s linear infinite;
+        }
+
+        .marquee-slide {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .marquee-slide span {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            margin: 0 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+        }
+
+        .marquee-slide span i {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Offer Cards */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2.5px solid rgba(0, 86, 179, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1;
+        }
+
+        .glass-card:hover::before {
+            left: 0;
+            width: 100%;
+        }
+
+        .glass-card:hover {
+            transform: scale(1.02) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(31, 38, 135, 0.25);
+            border-color: var(--primary);
+        }
+
+        .card-featured {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.85);
+            border: 2.5px solid rgba(0, 86, 179, 0.15);
+            transform: scale(1.02);
+            padding: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-featured:hover {
+            transform: scale(1.02) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(31, 38, 135, 0.25);
+            border-color: var(--primary);
+        }
+
+        @media (min-width: 992px) {
+            .glass-card:hover {
+                transform: scale(1.05) translateY(-10px);
+            }
+            .card-featured {
+                grid-column: span 2;
+                transform: scale(1.05);
+                z-index: 2;
+            }
+            .card-featured:hover {
+                transform: scale(1.05) translateY(-10px);
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 10px rgba(229, 46, 113, 0.4);
+            animation: pulse-glow 2s infinite;
+        }
+
+        .price-discount {
+            background: rgba(37, 211, 102, 0.12);
+            color: #25d366;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-left: auto;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card-featured .offer-title {
+            font-size: 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .price-old {
+            font-size: 1.2rem;
+            color: #dc3545;
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+
+        .price-new {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .offer-includes {
+            list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .offer-includes li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .offer-includes li i {
+            color: var(--whatsapp);
+            margin-top: 4px;
+        }
+        
+        .offer-includes li.free i {
+            color: var(--accent);
+        }
+
+        .offer-includes li.free {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .btn-claim {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-claim:hover {
+            background: var(--secondary);
+            box-shadow: 0 5px 15px rgba(255, 138, 0, 0.3);
+        }
+
+        .btn-pay {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: var(--white);
+            border: none;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn-pay:hover {
+            background: #218838;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        /* Services & Why Us Grids */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background: var(--white);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .grid-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(21, 101, 192, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .grid-card:hover .grid-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .grid-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            padding: 40px 5% 35px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 40px;
+            border-radius: 40px 40px 0 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Footer */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer {
+            background-color: #111;
+            color: var(--white);
+            padding: 30px 0 0; /* Reduced top/bottom padding */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px; /* Reduced bottom margin */
+            flex-wrap: wrap;
+            gap: 15px; /* Reduced gap */
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 2px; /* Tightened space */
+            line-height: 1.2;
+        }
+
+        .footer-brand p {
+            color: #999;
+            margin-bottom: 0;
+            line-height: 1.4; /* Tighter lines */
+        }
+
+        .btn-footer-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: #fff;
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-footer-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: #f8f9fa;
+        }
+
+        .btn-footer-call i {
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 0; 
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.08);
+            z-index: 99999;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .mob-nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            height: 48px;
+            max-width: 80px;
+            gap: 3px;
+            color: #667085;
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.2px;
+            text-transform: capitalize;
+        }
+
+        .mob-nav-link i {
+            font-size: 1.2rem;
+            color: #667085;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mob-nav-link.active {
+            background: rgba(0, 86, 179, 0.08);
+            color: var(--primary);
+        }
+
+        .mob-nav-link.active i {
+            color: var(--primary);
+            transform: translateY(-1px) scale(1.05);
+        }
+
+        /* Offers Highlight Button */
+        .mob-nav-link.mob-nav-offers {
+            color: #667085;
+        }
+
+        .mob-nav-link.mob-nav-offers.active {
+            background: rgba(16, 185, 129, 0.08) !important;
+            color: #10b981 !important;
+        }
+
+        .mob-nav-link.mob-nav-offers.active i {
+            color: #10b981 !important;
+            transform: translateY(-1px) scale(1.05);
+        }
+
+        /* Mobile Offers Pulse Notification Dot */
+        .mob-nav-badge {
+            position: absolute;
+            top: -2px;
+            right: -4px;
+            width: 7px;
+            height: 7px;
+            background-color: #10b981;
+            border-radius: 50%;
+            border: 1.5px solid #ffffff;
+            animation: dotPulse 1.8s infinite ease-in-out;
+        }
+
+        @keyframes dotPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 120px 5% 40px; }
+            .hero h1 { font-size: 2.5rem; }
+            .card-featured { transform: scale(1); padding: 25px; }
+            .glass-card:hover,
+            .card-featured:hover { transform: translateY(-10px); }
+            .badge { top: 15px; right: -40px; }
+            .cta-section h2 { font-size: 2rem; }
+            
+            .navbar {
+                justify-content: center;
+            }
+            
+            .back-link {
+                display: none;
+            }
+            
+            .logo-text {
+                display: none;
+            }
+
+            .logo img {
+                height: 42px;
+            }
+            
+            .mobile-bottom-nav {
+                display: flex !important;
+            }
+            body {
+                padding-bottom: 0;
+            }
+
+            /* Footer Responsive Styles */
+            .footer {
+                padding-top: 30px;
+                padding-bottom: 60px;
+            }
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 25px;
+            }
+            .footer-brand {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .footer-bottom {
+                text-align: center;
+                padding: 10px 0;
+                width: 100%;
+            }
+            .footer-contact-row {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile/Tablet Footer CSS */
+        .fp {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .footer {
+                display: none !important;
+            }
+
+            .mobile-bottom-nav {
+                display: flex !important;
+            }
+
+            .nav-menu {
+                display: none !important;
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+
+            .logo-text {
+                display: none;
+            }
+
+            body {
+                padding-bottom: 0;
+            }
+            
+            .fp {
+                display: block;
+                font-family: 'DM Sans', sans-serif;
+                background: #1a1a1a;
+                border-radius: 0;
+                overflow: hidden;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+                padding-bottom: 70px;
+            }
+            
+            .fp-main {
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .fp-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                background: transparent;
+                border: 1.5px solid #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .fp-icon i {
+                font-size: 18px;
+                color: #ffffff;
+            }
+
+            .fp-text {
+                flex: 1;
+                min-width: 0;
+                text-align: left;
+            }
+
+            .fp-name {
+                font-size: 14px;
+                font-weight: 500;
+                color: #ffffff;
+                margin: 0 0 2px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .fp-addr {
+                font-size: 11.5px;
+                color: rgba(255, 255, 255, 0.85);
+                font-weight: 300;
+                line-height: 1.4;
+            }
+
+            .fp-call {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                padding: 9px 16px;
+                background: #f5f5f5;
+                border-radius: 50px;
+                color: #1a1a1a;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 13.5px;
+                font-weight: 500;
+                text-decoration: none;
+                white-space: nowrap;
+                flex-shrink: 0;
+                transition: background 0.15s ease;
+            }
+
+            .fp-call:hover,
+            .fp-call:active {
+                background: #ffffff;
+            }
+
+            .fp-call i {
+                font-size: 15px;
+                color: #1d4ed8;
+            }
+
+            .fp-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.07);
+                padding: 8px 16px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .fp-bottom i {
+                font-size: 13px;
+                color: #ffffff;
+            }
+
+            .fp-loc {
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.85);
+                font-weight: 300;
+                letter-spacing: 0.04em;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://i.postimg.cc/SR7jLVqC/Chat-GPT-Image-May-10-2026-02-20-58-PM.png" alt="Quick Prints Logo">
+            <div class="logo-text">
+                <span class="brand-name">Quick Prints</span>
+                <span class="brand-sub">& Services</span>
+            </div>
+        </a>
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Main
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-bottom: 50px;">
+            <h1>Quick Prints and Services</h1>
+            <p>Fast • Helpful • Reliable</p>
+            <a href="https://wa.me/918707874401" class="btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Your File
+            </a>
+            <a href="tel:+918707874401" class="btn-footer-call" style="margin-top: 15px;">
+                <i class="fa-solid fa-phone"></i> <span>+91 87078 74401</span>
+            </a>
+        </div>
+        <!-- Highlight Banner -->
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="marquee-slide">
+                    <span><i class="fa-solid fa-circle-info"></i> <strong>These offers are exclusively valid for customers coming through our website</strong></span>
+                    <span><i class="fa-solid fa-bolt"></i> FREE Scan to PDF</span>
+                    <span><i class="fa-solid fa-camera"></i> FREE Passport Photo Soft Copy</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> FREE Document Scan Upload</span>
+                    <span><i class="fa-solid fa-arrows-spin"></i> FREE PDF Arrange & Resize</span>
+                    <span><i class="fa-solid fa-paperclip"></i> FREE Stapling</span>
+                    <span><i class="fa-solid fa-copy"></i> 1 FREE Photocopy on every 20 pages</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> FREE PDF Copy on WhatsApp</span>
+                    <span><i class="fa-solid fa-gift"></i> First B/W Print FREE for New Customers</span>
+                </div>
+                <div class="marquee-slide">
+                    <span><i class="fa-solid fa-circle-info"></i> <strong>These offers are exclusively valid for customers coming through our website</strong></span>
+                    <span><i class="fa-solid fa-bolt"></i> FREE Scan to PDF</span>
+                    <span><i class="fa-solid fa-camera"></i> FREE Passport Photo Soft Copy</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> FREE Document Scan Upload</span>
+                    <span><i class="fa-solid fa-arrows-spin"></i> FREE PDF Arrange & Resize</span>
+                    <span><i class="fa-solid fa-paperclip"></i> FREE Stapling</span>
+                    <span><i class="fa-solid fa-copy"></i> 1 FREE Photocopy on every 20 pages</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> FREE PDF Copy on WhatsApp</span>
+                    <span><i class="fa-solid fa-gift"></i> First B/W Print FREE for New Customers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="section" id="offers">
+        <div class="section-header fade-in">
+            <h2>Exclusive Offers</h2>
+            <p>Save more with our combo packages</p>
+        </div>
+        
+        <div class="offers-grid">
+            <!-- Main Featured Offer -->
+            <div class="glass-card card-featured fade-in">
+                <div class="badge">SAVE ₹51</div>
+                <h3 class="offer-title">Complete Job Application Package</h3>
+                <div class="price-container">
+                    <span class="price-old">₹250</span>
+                    <span class="price-new">₹199</span>
+                    <span class="price-discount">20% OFF</span>
+                </div>
+                <div class="remote-badge"><i class="fa-solid fa-cloud"></i> <span>Remote Service Available</span></div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> Complete Online Form Filling</li>
+                    <li><i class="fa-solid fa-check-circle"></i> 5 Passport Size Photos</li>
+                    <li><i class="fa-solid fa-check-circle"></i> 10 Black & White Prints</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free Document Scan Upload</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free PDF Arrange & Resize</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free Passport Photo Soft Copy on WhatsApp</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Job%20Application%20Package" class="btn-claim" target="_blank">Claim Offer on WhatsApp</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=199&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹199)</a>
+            </div>
+
+            <!-- Second Offer -->
+            <div class="glass-card fade-in">
+                <div class="badge">SAVE ₹11</div>
+                <h3 class="offer-title">Student Combo</h3>
+                <div class="price-container">
+                    <span class="price-old">₹40</span>
+                    <span class="price-new">₹29</span>
+                    <span class="price-discount">28% OFF</span>
+                </div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> 5 Photocopies</li>
+                    <li><i class="fa-solid fa-check-circle"></i> 2 B/W Prints</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free PDF Scan</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Student%20Combo" class="btn-claim" target="_blank">Claim Offer</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=29&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹29)</a>
+            </div>
+
+            <!-- School Project Assistance Pack -->
+            <div class="glass-card fade-in">
+                <div class="badge">SAVE ₹50</div>
+                <h3 class="offer-title">School Project Assistance Pack</h3>
+                <div class="price-container">
+                    <span class="price-old">₹149</span>
+                    <span class="price-new">₹99 <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-light);">Starting</span></span>
+                    <span class="price-discount">34% OFF</span>
+                </div>
+                <div class="remote-badge"><i class="fa-solid fa-cloud"></i> <span>100% Remote Support</span></div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> Topic Research Help</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Diagram & Image Search</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Project Formatting</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Cover Page Design</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> PDF Copy on WhatsApp</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20School%20Project%20Assistance%20Pack" class="btn-claim" target="_blank">Claim Offer</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=99&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹99)</a>
+            </div>
+
+            <!-- Quick Print & Scan Combo -->
+            <div class="glass-card fade-in">
+                <div class="badge">SAVE ₹10</div>
+                <h3 class="offer-title">Quick Print & Scan Combo</h3>
+                <div class="price-container">
+                    <span class="price-old">₹69</span>
+                    <span class="price-new">₹59</span>
+                    <span class="price-discount">14% OFF</span>
+                </div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> 5 B/W Prints</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free Scan to PDF</li>
+                    <li><i class="fa-solid fa-check-circle"></i> PDF Arrange Help</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> Free Stapling</li>
+                    <li><i class="fa-solid fa-check-circle"></i> WhatsApp File Support</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Quick%20Print%20%26%20Scan%20Combo" class="btn-claim" target="_blank">Claim Offer</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=59&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹59)</a>
+            </div>
+
+            <!-- Passport Photo Combo -->
+            <div class="glass-card fade-in">
+                <div class="badge">SAVE ₹11</div>
+                <h3 class="offer-title">Passport Photo Combo</h3>
+                <div class="price-container">
+                    <span class="price-old">₹70</span>
+                    <span class="price-new">₹59</span>
+                    <span class="price-discount">16% OFF</span>
+                </div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> 5 Passport Photos</li>
+                    <li><i class="fa-solid fa-check-circle"></i> HD Soft Copy</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Photo Resize for Forms</li>
+                    <li class="free"><i class="fa-solid fa-gift"></i> 1 Free Photocopy (on every 20 pages)</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Passport%20Photo%20Combo" class="btn-claim" target="_blank">Claim Offer</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=59&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹59)</a>
+            </div>
+
+            <!-- Digital Assistance Pack -->
+            <div class="glass-card fade-in">
+                <div class="badge">SAVE ₹20</div>
+                <h3 class="offer-title">Digital Assistance Pack</h3>
+                <div class="price-container">
+                    <span class="price-old">₹99</span>
+                    <span class="price-new">₹79</span>
+                    <span class="price-discount">20% OFF</span>
+                </div>
+                <div class="remote-badge"><i class="fa-solid fa-cloud"></i> <span>100% Remote Support</span></div>
+                <ul class="offer-includes">
+                    <li><i class="fa-solid fa-check-circle"></i> DigiLocker Download & Document Access</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Signature Resize for Online Forms</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Passport Photo Resize & Compression</li>
+                    <li><i class="fa-solid fa-check-circle"></i> PDF Merge, Split & Rearrangement</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Document Compression for Upload Limits</li>
+                    <li><i class="fa-solid fa-check-circle"></i> JPG/Image to PDF Conversion</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Online Form Upload Error Fixes</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Scan to Proper PDF Conversion</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Email Attachment & Submission Help</li>
+                    <li><i class="fa-solid fa-check-circle"></i> File Format Conversion</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Google Drive Upload & Share Help</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Screenshot to PDF Arrangement</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Mobile to Laptop File Transfer</li>
+                    <li><i class="fa-solid fa-check-circle"></i> ZIP/RAR File Extraction</li>
+                    <li><i class="fa-solid fa-check-circle"></i> PDF Not Opening / Corrupted File Help</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Print-Ready File Preparation</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Online Document Submission Assistance</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Resume PDF Formatting</li>
+                    <li><i class="fa-solid fa-check-circle"></i> File Rename & Organization for Forms</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Basic Account & Document Upload Guidance</li>
+                </ul>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Digital%20Assistance%20Pack" class="btn-claim" target="_blank">Claim Offer</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=79&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹79)</a>
+            </div>
+
+            <!-- Software & Digital Problem Fix Pack -->
+            <div class="glass-card card-featured fade-in" style="margin-top: 20px;">
+                <div class="badge">SAVE ₹100</div>
+                <h3 class="offer-title">Software & Digital Problem Fix Pack</h3>
+                <div class="price-container">
+                    <span class="price-old">₹199</span>
+                    <span class="price-new">₹99 <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-light);">Starting</span></span>
+                    <span class="price-discount">50% OFF</span>
+                </div>
+                <div class="remote-badge"><i class="fa-solid fa-network-wired"></i> <span>100% Remote Support Available</span></div>
+                <div style="background: rgba(0, 86, 179, 0.04); border: 1px solid rgba(0, 86, 179, 0.1); border-radius: var(--radius-md); padding: 12px 15px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.5; color: var(--text-light); text-align: left; display: flex; align-items: center; gap: 12px;">
+                    <div style="font-size: 1.6rem; color: var(--primary);"><i class="fa-solid fa-headset"></i></div>
+                    <div>
+                        Live connection support on your PC/Laptop via 
+                        <span style="background: #ff4f4f; color: white; padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(255,79,79,0.3); display: inline-block; margin: 0 2px;">PARSEC</span>, 
+                        <strong>AnyDesk</strong>, or <strong>TeamViewer</strong>.
+                    </div>
+                </div>
+                <div style="column-width: 250px; column-gap: 20px;">
+                    <ul class="offer-includes" style="margin-bottom: 0;">
+                        <li><i class="fa-solid fa-check-circle"></i> Software Installation & Setup</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Windows Software Issues</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Printer Software Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Driver Installation & Update</li>
+                        <li><i class="fa-solid fa-check-circle"></i> PDF Not Opening / PDF Errors</li>
+                        <li><i class="fa-solid fa-check-circle"></i> File Format Conversion</li>
+                        <li><i class="fa-solid fa-check-circle"></i> App Installation Assistance</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Basic System Cleanup</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Browser Issues & Fixes</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Internet & Download Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Microsoft Office Related Issues</li>
+                        <li><i class="fa-solid fa-check-circle"></i> WhatsApp File Transfer Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Scan & PDF Upload Issues</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Software Activation Guidance</li>
+                        <li><i class="fa-solid fa-check-circle"></i> File Opening Errors</li>
+                        <li><i class="fa-solid fa-check-circle"></i> ZIP/RAR Extraction Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Document Formatting Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Basic Email & Attachment Issues</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Phone-to-Laptop File Transfer Help</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Slow Software Troubleshooting</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Login & Account Assistance</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Online Form Upload Errors</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Basic Data Backup Help</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Cloud Storage Assistance</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Windows Settings & Configuration Help</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Webcam / Mic Software Setup</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Video & Audio Playback Issues</li>
+                        <li><i class="fa-solid fa-check-circle"></i> App Permission Problems</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Basic Android Software Help</li>
+                        <li><i class="fa-solid fa-check-circle"></i> School/College Software Assistance</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 25px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Hardware Disclaimer -->
+                    <div style="background: rgba(211, 47, 47, 0.05); border: 1px dashed rgba(211, 47, 47, 0.2); border-radius: var(--radius-md); padding: 10px 14px; font-size: 0.85rem; color: #d32f2f; display: flex; align-items: center; gap: 10px; text-align: left;">
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.1rem; flex-shrink: 0;"></i>
+                        <span><strong>Disclaimer:</strong> Hardware repair is not included.</span>
+                    </div>
+                    <!-- Software Commitment -->
+                    <div style="background: rgba(0, 86, 179, 0.05); border: 1px dashed rgba(0, 86, 179, 0.2); border-radius: var(--radius-md); padding: 10px 14px; font-size: 0.85rem; color: var(--primary); display: flex; align-items: center; gap: 10px; text-align: left;">
+                        <i class="fa-solid fa-screwdriver-wrench" style="font-size: 1.1rem; flex-shrink: 0;"></i>
+                        <span>Any software-related issue? We'll try our best to fix it.</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/918707874401?text=I'm%20interested%20in%20the%20Software%20%26%20Digital%20Problem%20Fix%20Pack" class="btn-claim" target="_blank">Contact Us on WhatsApp</a>
+                <a href="upi://pay?pa=dtiwari5545-1@okhdfcbank&am=99&cu=INR" class="btn-pay"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Now (₹99)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remote & Online Support Section -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.03); border-radius: var(--radius-md); border: 1px solid rgba(0, 86, 179, 0.15); padding: 45px 30px; margin-top: 40px; margin-bottom: 40px;">
+        <div class="section-header fade-in" style="margin-bottom: 35px;">
+            <div class="remote-badge" style="margin: 0 auto 15px; display: inline-flex;"><i class="fa-solid fa-laptop-house"></i> <span>Online & Remote Support</span></div>
+            <h2>Get Services Done From Home</h2>
+            <p>100% Secure Remote Assistance for Digital & Software Services</p>
+        </div>
+        
+        <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <div class="glass-card fade-in" style="text-align: left; padding: 25px; transition: transform 0.3s ease;">
+                <div class="grid-icon" style="margin: 0 auto 18px; font-size: 1.5rem;"><i class="fa-solid fa-file-signature"></i></div>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">Resume & Online Form Filling</h4>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Submit your details securely via WhatsApp. We will format your professional Resume/CV, fill out job application or admission forms, perform document compression, and send you the final confirmation PDF directly on WhatsApp.</p>
+            </div>
+            
+            <div class="glass-card fade-in" style="text-align: left; padding: 25px; transition: transform 0.3s ease;">
+                <div class="grid-icon" style="margin: 0 auto 18px; font-size: 1.5rem;"><i class="fa-solid fa-headset"></i></div>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">Remote Desktop Troubleshooting</h4>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Facing system crashes, printer installation errors, or PDF faults? We provide live, secure support on your PC/Laptop using <span style="background: #ff4f4f; color: white; padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(255,79,79,0.3); display: inline-block; margin: 0 2px;">PARSEC</span>, <strong>AnyDesk</strong>, or <strong>TeamViewer</strong>.</p>
+            </div>
+            
+            <div class="glass-card fade-in" style="text-align: left; padding: 25px; transition: transform 0.3s ease;">
+                <div class="grid-icon" style="margin: 0 auto 18px; font-size: 1.5rem;"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">Project Formatting & Cover Design</h4>
+                <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Send us your project outline. We assist remotely with topic research, diagram sourcing, word processing, and professional cover page design, returning a print-ready PDF file.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="section">
+        <div class="section-header fade-in">
+            <h2>Our Services</h2>
+            <p>Everything you need in one place</p>
+        </div>
+        <div class="grid-container">
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-print"></i></div>
+                <h3>Black & White Print</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Color Print</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-copy"></i></div>
+                <h3>Photocopy</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>Aadhaar Related Work</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-desktop"></i></div>
+                <h3>Online Form Filling</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-keyboard"></i></div>
+                <h3>Hindi Typing</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                <h3>Passport Photos</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                <h3>Scan & PDF Services</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Project Work Help</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <h3>Digital Assistance</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Software Fixes</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+        <div class="section-header fade-in">
+            <h2>Why Choose Us?</h2>
+        </div>
+        <div class="grid-container">
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Fast Service</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>WhatsApp File Printing</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-hands-helping"></i></div>
+                <h3>Helpful Support</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-tags"></i></div>
+                <h3>Affordable Pricing</h3>
+            </div>
+            <div class="grid-card fade-in">
+                <div class="grid-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Professional Work</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in">
+        <h2>Send Your File on WhatsApp & Collect Print Quickly</h2>
+        <p>No waiting in lines. We keep it ready for you!</p>
+        <a href="https://wa.me/918707874401" class="btn-whatsapp" target="_blank" style="display: inline-flex; margin: 0 auto;">
+            <i class="fa-brands fa-whatsapp"></i> Send File Now
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+                <h3 data-i18n="hero-title">Quick Prints and Services</h3>
+                <p data-i18n="footer-desc">Printing, Online Services & Daily Essentials</p>
+                <div class="footer-contact-row" style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <p style="font-size: 0.9rem; opacity: 0.85; text-align: center; max-width: 500px; line-height: 1.5; margin-bottom: 5px;">
+                        <i class="fa-solid fa-location-dot" style="color: #ffffff; font-size: 1.05rem; margin-right: 6px; vertical-align: middle;"></i><span style="vertical-align: middle;">Kunwar Singh Chauraha, near GGIC School, Officers Awaas, Ballia, UP 277001</span>
+                    </p>
+                    <a href="tel:+918707874401" class="btn-footer-call">
+                        <i class="fa-solid fa-phone"></i> <span>+91 87078 74401</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> <span data-i18n="footer-rights">Quick Prints and Services. All rights
+                    reserved.</span></p>
+        </div>
+    </footer>
+
+    <!-- Mobile/Tablet Footer -->
+    <footer class="fp">
+        <div class="fp-main">
+            <div class="fp-icon">
+                <i class="fa-solid fa-print"></i>
+            </div>
+            <div class="fp-text">
+                <p class="fp-name">Quick Prints &amp; Services</p>
+                <p class="fp-addr">Near GGIC School, Officers Awaas, Ballia UP</p>
+            </div>
+            <a class="fp-call" href="tel:+918707874401">
+                <i class="fa-solid fa-phone"></i>
+                Call
+            </a>
+        </div>
+        <div class="fp-bottom">
+            <i class="fa-solid fa-map-pin"></i>
+            <span class="fp-loc">Printing · Online Services · Daily Essentials · Ballia 277001</span>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+        <a href="index.html#home" class="mob-nav-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#offers" class="mob-nav-link mob-nav-offers active">
+            <i class="fa-solid fa-tags" style="position: relative;">
+                <span class="mob-nav-badge"></span>
+            </i>
+            <span>Offers</span>
+        </a>
+        <a href="index.html#about" class="mob-nav-link">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>About</span>
+        </a>
+        <a href="index.html#services" class="mob-nav-link">
+            <i class="fa-solid fa-box"></i>
+            <span>Services</span>
+        </a>
+        <a href="index.html#contact" class="mob-nav-link">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Remove Loader
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 800);
+
+            // Set Current Year in Footer
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Sticky Navbar
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll Animation Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+
+
+
+            // Hero Background Animation (Premium Motif)
+            const heroCanvas = document.getElementById('hero-canvas');
+            if (heroCanvas) {
+                const hctx = heroCanvas.getContext('2d');
+                let HW, HH;
+
+                function hResize() {
+                    const hr = heroCanvas.parentElement.getBoundingClientRect();
+                    HW = heroCanvas.width = hr.width;
+                    HH = heroCanvas.height = hr.height;
+                }
+
+                // ── 1. FLOATING HEXAGONS
+                class Hex {
+                    constructor(init) { this.reset(init); }
+                    reset(init) {
+                        this.x = Math.random() * HW;
+                        this.y = init ? Math.random() * HH : HH + 50;
+                        this.size = 14 + Math.random() * 22;
+                        this.vx = (Math.random() - .5) * .25;
+                        this.vy = -(0.4 + Math.random() * .45);
+                        this.rot = Math.random() * Math.PI;
+                        this.vrot = (Math.random() - .5) * .008;
+                        this.alpha = 0;
+                        this.targetA = .13 + Math.random() * .15;
+                        this.life = 0;
+                        this.maxL = 260 + Math.random() * 180;
+                        const blues = ['21,101,192', '25,118,210', '66,165,245', '13,71,161'];
+                        this.rgb = blues[Math.floor(Math.random() * blues.length)];
+                        this.filled = Math.random() > .5;
+                    }
+                    hexPath(cx, cy, r) {
+                        hctx.beginPath();
+                        for (let i = 0; i < 6; i++) {
+                            const a = (Math.PI / 3) * i - Math.PI / 6;
+                            i === 0 ? hctx.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a))
+                                : hctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+                        }
+                        hctx.closePath();
+                    }
+                    update() {
+                        this.x += this.vx; 
+                        this.y += this.vy; 
+                        this.rot += this.vrot;
+                        
+                        const prog = 1 - (this.y / HH); // 0 at bottom, 1 at top
+                        if (prog < 0.15) {
+                            this.alpha = this.targetA * (prog / 0.15);
+                        } else if (prog > 0.85) {
+                            this.alpha = this.targetA * (1 - (prog - 0.85) / 0.15);
+                        } else {
+                            this.alpha = this.targetA;
+                        }
+
+                        if (this.y < -this.size * 2) this.reset(false);
+                    }
+                    draw() {
+                        hctx.save(); hctx.translate(this.x, this.y); hctx.rotate(this.rot);
+                        this.hexPath(0, 0, this.size);
+                        if (this.filled) { hctx.fillStyle = `rgba(${this.rgb},${this.alpha * .4})`; hctx.fill(); }
+                        hctx.strokeStyle = `rgba(${this.rgb},${this.alpha})`; hctx.lineWidth = 1.5; hctx.stroke();
+                        hctx.restore();
+                    }
+                }
+
+                // ── 2. RISING DOTS
+                class Dot {
+                    constructor(init) { this.reset(init); }
+                    reset(init) {
+                        this.x = Math.random() * HW;
+                        this.y = init ? Math.random() * HH : HH + 10;
+                        this.r = 2.5 + Math.random() * 4;
+                        this.vy = -(0.4 + Math.random() * .5);
+                        this.vx = (Math.random() - .5) * .2;
+                        this.alpha = 0;
+                        this.maxA = .18 + Math.random() * .2;
+                        this.life = 0;
+                        this.maxL = 180 + Math.random() * 120;
+                        const stops = ['21,101,192', '25,118,210', '66,165,245', '144,202,249'];
+                        this.rgb = stops[Math.floor(Math.random() * stops.length)];
+                    }
+                    update() {
+                        this.x += this.vx + Math.sin(hFrame * .05) * .15;
+                        this.y += this.vy;
+                        
+                        const prog = 1 - (this.y / HH);
+                        if (prog < 0.1) {
+                            this.alpha = this.maxA * (prog / 0.1);
+                        } else if (prog > 0.9) {
+                            this.alpha = this.maxA * (1 - (prog - 0.9) / 0.1);
+                        } else {
+                            this.alpha = this.maxA;
+                        }
+
+                        if (this.y < -this.r * 2) this.reset(false);
+                    }
+                    draw() {
+                        hctx.beginPath(); hctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                        hctx.fillStyle = `rgba(${this.rgb},${this.alpha})`; hctx.fill();
+                    }
+                }
+
+                // ── 3. SCAN LINES
+                class ScanLine {
+                    constructor(delay) {
+                        this.y = -20; this.speed = .8 + Math.random() * .6; this.delay = delay;
+                        this.timer = 0; this.active = false; this.alpha = 0;
+                    }
+                    update() {
+                        this.timer++; if (this.timer < this.delay) return;
+                        this.active = true; this.y += this.speed;
+                        const prog = this.y / HH;
+                        this.alpha = prog < .1 ? prog / .1 : prog > .85 ? (1 - prog) / .15 : 1;
+                        if (this.y > HH + 20) { this.y = -20; this.timer = 0; this.delay = 180 + Math.floor(Math.random() * 200); this.active = false; }
+                    }
+                    draw() {
+                        if (!this.active) return;
+                        const a = this.alpha * .18;
+                        const grad = hctx.createLinearGradient(0, this.y - 6, 0, this.y + 6);
+                        grad.addColorStop(0, `rgba(66,165,245,0)`); grad.addColorStop(.5, `rgba(66,165,245,${a})`); grad.addColorStop(1, `rgba(66,165,245,0)`);
+                        hctx.fillStyle = grad; hctx.fillRect(0, this.y - 6, HW, 12);
+                        hctx.beginPath(); hctx.moveTo(0, this.y); hctx.lineTo(HW, this.y);
+                        hctx.strokeStyle = `rgba(100,181,246,${this.alpha * .55})`; hctx.lineWidth = 1; hctx.stroke();
+                    }
+                }
+
+                let gridCircles = [];
+                function buildGrid() {
+                    gridCircles = []; const gx = 44, gy = 44; let idx = 0;
+                    for (let x = gx / 2; x < HW + gx; x += gx) {
+                        for (let y = gy / 2; y < HH + gy; y += gy) {
+                            gridCircles.push({ x, y, phase: idx * .55 }); idx++;
+                        }
+                    }
+                }
+                function drawGrid(t) {
+                    gridCircles.forEach(c => {
+                        const wave = Math.sin(t * .9 + c.phase) * .5 + .5;
+                        const a = .07 + wave * .13, r = 1.4 + wave * 1.2;
+                        hctx.beginPath(); hctx.arc(c.x, c.y, r, 0, Math.PI * 2);
+                        hctx.fillStyle = `rgba(21,101,192,${a})`; hctx.fill();
+                    });
+                }
+                function drawBlobs(t) {
+                    const g1 = hctx.createRadialGradient(HW * .85, HH * .18, 0, HW * .85, HH * .18, HW * .5);
+                    g1.addColorStop(0, `rgba(66,165,245,0.22)`); g1.addColorStop(.55, `rgba(100,181,246,0.08)`); g1.addColorStop(1, `rgba(255,255,255,0)`);
+                    hctx.fillStyle = g1; hctx.fillRect(0, 0, HW, HH);
+                    const ox = Math.sin(t * .25) * 12, oy = Math.cos(t * .3) * 8;
+                    const g2 = hctx.createRadialGradient(HW * .12 + ox, HH * .88 + oy, 0, HW * .12 + ox, HH * .88 + oy, HW * .42);
+                    g2.addColorStop(0, `rgba(21,101,192,0.16)`); g2.addColorStop(.6, `rgba(66,165,245,0.06)`); g2.addColorStop(1, `rgba(255,255,255,0)`);
+                    hctx.fillStyle = g2; hctx.fillRect(0, 0, HW, HH);
+                }
+
+                hResize(); buildGrid();
+                const hexes = Array.from({ length: 14 }, (_, i) => new Hex(true));
+                const dots = Array.from({ length: 20 }, () => new Dot(true));
+                const scans = [new ScanLine(80)];
+                let hFrame = 0;
+                function hLoop() {
+                    hctx.clearRect(0, 0, HW, HH); const t = hFrame++ * .016;
+                    drawBlobs(t); drawGrid(t);
+                    scans.forEach(s => { s.update(); s.draw(); });
+                    dots.forEach(d => { d.update(); d.draw(); });
+                    hexes.forEach(h => { h.update(); h.draw(); });
+                    requestAnimationFrame(hLoop);
+                }
+                hLoop();
+                window.addEventListener('resize', () => { hResize(); buildGrid(); });
+            }
+        });
+    </script>
+</body>
+</html>

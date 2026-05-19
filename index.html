@@ -10,7 +10,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -47,8 +47,8 @@
             </a>
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house mobile-icon"></i><span
-                                class="nav-text" data-i18n="nav-home">Home</span></a></li>
+                    <li><a href="offers.html" class="nav-link nav-offers-btn"><i class="fa-solid fa-tags mobile-icon"></i><span
+                                class="nav-text" data-i18n="nav-offers">Offers</span><span class="nav-badge-new">NEW</span></a></li>
                     <li><a href="#about" class="nav-link"><i class="fa-solid fa-circle-info mobile-icon"></i><span
                                 class="nav-text" data-i18n="nav-about">About</span></a></li>
                     <li><a href="#services" class="nav-link"><i class="fa-solid fa-box mobile-icon"></i><span
@@ -149,6 +149,21 @@
                         <h3 data-i18n="svc-store-title">General Store</h3>
                         <p data-i18n="svc-store-desc">Stationery, snacks, and daily household products.</p>
                     </div>
+                    <div class="service-card fade-in-up delay-2">
+                        <div class="icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3 data-i18n="svc-project-title">Project Work Help</h3>
+                        <p data-i18n="svc-project-desc">Topic research, diagram search, project formatting & cover design.</p>
+                    </div>
+                    <div class="service-card fade-in-up">
+                        <div class="icon-wrapper"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <h3 data-i18n="svc-digital-title">Digital Assistance</h3>
+                        <p data-i18n="svc-digital-desc">DigiLocker setup, email submissions, and document upload help.</p>
+                    </div>
+                    <div class="service-card fade-in-up delay-1">
+                        <div class="icon-wrapper"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 data-i18n="svc-software-title">Software Installation & Fixes</h3>
+                        <p data-i18n="svc-software-desc">Assistance with software setup, driver updates, and resolving errors.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -240,10 +255,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-brand">
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                 <h3 data-i18n="hero-title">Quick Prints and Services</h3>
                 <p data-i18n="footer-desc">Printing, Online Services & Daily Essentials</p>
-                <div class="footer-contact-row" style="margin-top: 15px;">
+                <div class="footer-contact-row" style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <p style="font-size: 0.9rem; opacity: 0.85; text-align: center; max-width: 500px; line-height: 1.5; margin-bottom: 5px;">
+                        <i class="fa-solid fa-location-dot" style="color: #ffffff; font-size: 1.05rem; margin-right: 6px; vertical-align: middle;"></i><span style="vertical-align: middle;">Kunwar Singh Chauraha, near GGIC School, Officers Awaas, Ballia, UP 277001</span>
+                    </p>
                     <a href="tel:+918707874401" class="btn-footer-call">
                         <i class="fa-solid fa-phone"></i> <span>+91 87078 74401</span>
                     </a>
@@ -257,12 +275,38 @@
         </div>
     </footer>
 
+    <!-- Mobile/Tablet Footer -->
+    <footer class="fp">
+        <div class="fp-main">
+            <div class="fp-icon">
+                <i class="fa-solid fa-print"></i>
+            </div>
+            <div class="fp-text">
+                <p class="fp-name">Quick Prints &amp; Services</p>
+                <p class="fp-addr">Near GGIC School, Officers Awaas, Ballia UP</p>
+            </div>
+            <a class="fp-call" href="tel:+918707874401">
+                <i class="fa-solid fa-phone"></i>
+                Call
+            </a>
+        </div>
+        <div class="fp-bottom">
+            <i class="fa-solid fa-map-pin"></i>
+            <span class="fp-loc">Printing · Online Services · Daily Essentials · Ballia 277001</span>
+        </div>
+    </footer>
 
-    <!-- Mobile Bottom Navigation (independent element - never affected by header filters) -->
+
     <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
         <a href="#home" class="mob-nav-link active">
             <i class="fa-solid fa-house"></i>
             <span data-i18n="nav-home">Home</span>
+        </a>
+        <a href="offers.html" class="mob-nav-link mob-nav-offers">
+            <i class="fa-solid fa-tags" style="position: relative;">
+                <span class="mob-nav-badge"></span>
+            </i>
+            <span data-i18n="nav-offers">Offers</span>
         </a>
         <a href="#about" class="mob-nav-link">
             <i class="fa-solid fa-circle-info"></i>
@@ -271,10 +315,6 @@
         <a href="#services" class="mob-nav-link">
             <i class="fa-solid fa-box"></i>
             <span data-i18n="nav-services">Services</span>
-        </a>
-        <a href="#why-us" class="mob-nav-link">
-            <i class="fa-solid fa-star"></i>
-            <span data-i18n="nav-why">Why Us</span>
         </a>
         <a href="#contact" class="mob-nav-link">
             <i class="fa-solid fa-location-dot"></i>
