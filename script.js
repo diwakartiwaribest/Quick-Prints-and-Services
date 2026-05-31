@@ -1,122 +1,16 @@
-const translations = {
-    en: {
-        "nav-home": "Home",
-        "nav-about": "About",
-        "nav-services": "Services",
-        "nav-why": "Why Us",
-        "nav-contact": "Contact",
-        "hero-title": "Quick Prints and Services",
-        "hero-subtitle": "Printing, Online Services & Daily Essentials in One Place",
-        "btn-whatsapp": "Chat on WhatsApp",
-        "btn-services": "View Services",
-        "about-title": "About Us",
-        "about-text": "Welcome to <strong>Quick Prints and Services</strong>. We are a professional, all-in-one local shop dedicated to making your life easier. Whether you need high-quality printing, photocopy, assistance with online document work and ticket booking, or just want to grab daily grocery essentials, we've got you covered. Fast, reliable, and affordable services tailored for our community.",
-        "services-title": "Our Services",
-        "svc-printing-title": "Printing",
-        "svc-printing-desc": "High-quality black & white and color document printing.",
-        "svc-copy-title": "Photocopy",
-        "svc-copy-desc": "Fast and crisp photocopying services for all document sizes.",
-        "svc-form-title": "Online Form Filling",
-        "svc-form-desc": "Assistance with job applications, government forms, and more.",
-        "svc-ticket-title": "Ticket Booking",
-        "svc-ticket-desc": "Train, flight, and bus ticket booking made easy.",
-        "svc-recharge-title": "Recharge & Bills",
-        "svc-recharge-desc": "Mobile recharges and utility bill payments.",
-        "svc-grocery-title": "Grocery Items",
-        "svc-grocery-desc": "Fresh and packaged daily grocery essentials.",
-        "svc-store-title": "General Store",
-        "svc-store-desc": "Stationery, snacks, and daily household products.",
-        "svc-project-title": "Project Work Help",
-        "svc-project-desc": "Topic research, diagram search, project formatting & cover design.",
-        "svc-digital-title": "Digital Assistance",
-        "svc-digital-desc": "DigiLocker setup, email submissions, and document upload help.",
-        "svc-software-title": "Software Installation & Fixes",
-        "svc-software-desc": "Assistance with software setup, driver updates, and resolving errors.",
-        "why-title": "Why Choose Us",
-        "why-fast-title": "Fast Service",
-        "why-fast-desc": "We value your time and deliver prompt results.",
-        "why-price-title": "Affordable Price",
-        "why-price-desc": "Best quality services at pocket-friendly rates.",
-        "why-trust-title": "Trusted Shop",
-        "why-trust-desc": "Reliable and secure handling of your documents.",
-        "why-all-title": "All-in-One",
-        "why-all-desc": "Multiple services under a single roof.",
-        "contact-title": "Contact Us",
-        "contact-msg-title": "We are just a message away!",
-        "contact-msg-desc": "For any inquiries, services, or support, feel free to reach out to us on WhatsApp.",
-        "btn-msg": "Message on WhatsApp",
-        "btn-call": "Call Now",
-        "contact-visit-title": "Visit Our Shop",
-        "contact-visit-desc": "Kunwar Singh Chauraha, near GGIC School, Officers Awaas, Ballia, Uttar Pradesh 277001",
-        "btn-dir": "Get Directions",
-        "footer-desc": "Printing, Online Services & Daily Essentials",
-        "footer-rights": "Quick Prints and Services. All rights reserved."
-    },
-    hi: {
-        "nav-home": "होम",
-        "nav-about": "हमारे बारे में",
-        "nav-services": "सेवाएं",
-        "nav-why": "हम ही क्यों",
-        "nav-contact": "संपर्क",
-        "hero-title": "Quick Prints and Services",
-        "hero-subtitle": "प्रिंटिंग, ऑनलाइन सेवाएं और दैनिक जरूरत का सामान एक ही जगह",
-        "btn-whatsapp": "WhatsApp पर बात करें",
-        "btn-services": "सेवाएं देखें",
-        "about-title": "हमारे बारे में",
-        "about-text": "<strong>Quick Prints and Services</strong> में आपका स्वागत है। हम एक पेशेवर, ऑल-इन-वन लोकल शॉप हैं जो आपके जीवन को आसान बनाने के लिए समर्पित हैं। चाहे आपको उच्च गुणवत्ता वाली प्रिंटिंग, फोटोकॉपी, ऑनलाइन फॉर्म भरने या टिकट बुकिंग में सहायता की आवश्यकता हो, या बस दैनिक किराने का सामान चाहिए, हम आपके लिए उपलब्ध हैं। हमारे समुदाय के लिए तेज़, विश्वसनीय और किफायती सेवाएं।",
-        "services-title": "हमारी सेवाएं",
-        "svc-printing-title": "प्रिंटिंग",
-        "svc-printing-desc": "उच्च गुणवत्ता वाली ब्लैक एंड व्हाइट और रंगीन दस्तावेज़ प्रिंटिंग।",
-        "svc-copy-title": "फोटोकॉपी",
-        "svc-copy-desc": "सभी प्रकार के दस्तावेज़ों के लिए तेज़ और स्पष्ट फोटोकॉपी सेवाएं।",
-        "svc-form-title": "ऑनलाइन फॉर्म भरना",
-        "svc-form-desc": "नौकरी के आवेदन, सरकारी फॉर्म आदि में सहायता।",
-        "svc-ticket-title": "टिकट बुकिंग",
-        "svc-ticket-desc": "ट्रेन, फ्लाइट और बस टिकट बुकिंग हुई आसान।",
-        "svc-recharge-title": "रिचार्ज और बिल",
-        "svc-recharge-desc": "मोबाइल रिचार्ज और उपयोगिता बिल भुगतान।",
-        "svc-grocery-title": "किराने का सामान",
-        "svc-grocery-desc": "ताज़ा और पैक किया हुआ दैनिक किराने का सामान।",
-        "svc-store-title": "जनरल स्टोर",
-        "svc-store-desc": "स्टेशनरी, स्नैक्स और रोजमर्रा के घरेलू उत्पाद।",
-        "svc-project-title": "प्रोजेक्ट कार्य सहायता",
-        "svc-project-desc": "विषय अनुसंधान, आरेख खोज, प्रोजेक्ट फॉर्मेटिंग और कवर डिज़ाइन।",
-        "svc-digital-title": "डिजिटल सहायता",
-        "svc-digital-desc": "डिजिलॉकर सेटअप, ईमेल सबमिशन और दस्तावेज़ अपलोड सहायता।",
-        "svc-software-title": "सॉफ्टवेयर इंस्टॉलेशन और सुधार",
-        "svc-software-desc": "सॉफ्टवेयर सेटअप, ड्राइवर अपडेट और त्रुटियों को हल करने में सहायता।",
-        "why-title": "हमें क्यों चुनें",
-        "why-fast-title": "तेज़ सेवा",
-        "why-fast-desc": "हम आपके समय को महत्व देते हैं और तुरंत परिणाम देते हैं।",
-        "why-price-title": "किफायती कीमत",
-        "why-price-desc": "जेब के अनुकूल दरों पर सर्वोत्तम गुणवत्ता वाली सेवाएं।",
-        "why-trust-title": "भरोसेमंद दुकान",
-        "why-trust-desc": "आपके दस्तावेज़ों का सुरक्षित संचालन।",
-        "why-all-title": "ऑल-इन-वन",
-        "why-all-desc": "एक ही छत के नीचे कई सेवाएं।",
-        "contact-title": "संपर्क करें",
-        "contact-msg-title": "हम बस एक मैसेज दूर हैं!",
-        "contact-msg-desc": "किसी भी पूछताछ, सेवा या सहायता के लिए, कृपया बेझिझक हमसे WhatsApp पर संपर्क करें।",
-        "btn-msg": "WhatsApp पर मैसेज करें",
-        "btn-call": "अभी कॉल करें",
-        "contact-visit-title": "हमारी दुकान पर आएं",
-        "contact-visit-desc": "कुंवर सिंह चौराहा, जीजीआईसी स्कूल के पास, ऑफिसर्स आवास, बलिया, उत्तर प्रदेश 277001",
-        "btn-dir": "रास्ता देखें",
-        "footer-desc": "प्रिंटिंग, ऑनलाइन सेवाएं और दैनिक जरूरत का सामान",
-        "footer-rights": "Quick Prints and Services. सर्वाधिकार सुरक्षित।"
-    }
-};
+// Translations are now loaded from translations.js
 
 let currentLang = localStorage.getItem('lang') || 'en';
 
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
+    document.body.classList.toggle('lang-hi', lang === 'hi');
 
     // Update language toggle button text
     const langBtnText = document.getElementById('lang-btn-text');
     if (langBtnText) {
-        langBtnText.textContent = lang === 'en' ? 'हिं' : 'EN';
+        langBtnText.textContent = lang === 'en' ? 'HI' : 'EN';
     }
 
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -174,10 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // Back-to-top visibility
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
         }
     });
 
